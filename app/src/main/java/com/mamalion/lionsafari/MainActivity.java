@@ -1,6 +1,7 @@
 package com.mamalion.lionsafari;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
 import android.net.Uri;
@@ -10,10 +11,8 @@ import android.webkit.WebChromeClient;
 import android.webkit.WebResourceRequest;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
-import androidx.activity.OnBackPressedCallback;
-import androidx.appcompat.app.AppCompatActivity;
 
-public class MainActivity extends AppCompatActivity {
+ public class MainActivity extends Activity {
     private static final String APP_URL = "https://lion-safari-v1.alamhayyat20.chatgpt.site";
     private WebView webView;
 
@@ -42,11 +41,10 @@ public class MainActivity extends AppCompatActivity {
         });
         webView.loadUrl(APP_URL);
 
-        getOnBackPressedDispatcher().addCallback(this, new OnBackPressedCallback(true) {
-            @Override public void handleOnBackPressed() {
-                if (webView.canGoBack()) webView.goBack(); else finish();
-            }
-        });
+    }
+
+    @Override public void onBackPressed() {
+        if (webView.canGoBack()) webView.goBack(); else super.onBackPressed();
     }
 
     @Override protected void onPause() { super.onPause(); webView.onPause(); }
