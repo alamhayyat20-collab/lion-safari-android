@@ -1,0 +1,8 @@
+<resources>
+    <style name="Theme.LionSafari" parent="Theme.AppCompat.DayNight.NoActionBar">
+        <item name="android:fontFamily">sans</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:navigationBarColor">#08261D</item>
+        <item name="colorAccent">#D8B45A</item>
+    </style>
+</resources>

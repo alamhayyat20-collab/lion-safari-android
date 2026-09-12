@@ -1,0 +1,26 @@
+plugins { id 'com.android.application' }
+
+android {
+    namespace 'com.mamalion.lionsafari'
+    compileSdk 35
+
+    defaultConfig {
+        applicationId 'com.mamalion.lionsafari'
+        minSdk 24
+        targetSdk 35
+        versionCode 11
+        versionName '1.1'
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation 'androidx.appcompat:appcompat:1.7.0'
+    implementation 'androidx.activity:activity:1.9.3'
+}
